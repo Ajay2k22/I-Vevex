@@ -1,3 +1,5 @@
+import { User } from "../graphql/user/model/user";
+import UserDao from "../dao/user";
 export interface CreateUserPayload {
   firstName: String;
   lastName: String;
@@ -6,9 +8,9 @@ export interface CreateUserPayload {
 }
 
 class UserService {
-  public static createUser(payload: CreateUserPayload) {
-    const { firstName, lastName, email, password } = payload;
-    return payload;
+  public static async createUser(payload: CreateUserPayload) {
+    let res = UserDao.createUser(payload);
+    return res;
   }
 }
 
