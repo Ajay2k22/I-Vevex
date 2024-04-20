@@ -11,8 +11,8 @@ const mutations = {
   createUser: async (_: any, payload: CreateUserPayload) => {
     // console.log(payload);
     // return "hero2";
-    const res = UserService.createUser(payload);
-    return res.firstName;
+    let res = UserService.createUser(payload);
+    return res;
   },
   createUser1: async (_: any, name: String) => {
     // console.log(payload);
